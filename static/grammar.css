@@ -1,0 +1,213 @@
+/* ---------- Base ---------- */
+body {
+    margin: 0;
+    font-family: 'Gluten', cursive;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 60px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.logo {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    cursor: pointer;
+    font-style: normal;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 45px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s ease;
+    will-change: transform, color;
+}
+
+.nav-links li a:hover {
+    color: #00e6ff;
+    transform: translateY(-2px);
+}
+
+/* ---------- Container ---------- */
+.container {
+    width: min(90%, 850px);
+    margin: 140px auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 45px 48px;
+    border-radius: 20px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: calc(100vh - 250px);
+}
+
+h1 {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.8rem;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.subtitle {
+    text-align: center;
+    letter-spacing: 0.8px;
+    font-size: 1.1rem;
+    color: #cfd8dc;
+    margin-bottom: 25px;
+}
+
+/* ---------- Form ---------- */
+textarea,
+input,
+select,
+button {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 100%;
+    height: 180px;
+    font-size: 20px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    resize: none;
+    font-family: 'Gluten', cursive;
+}
+
+textarea::placeholder {
+    color: #aaa;
+    font-size: 20px;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-check {
+    width: 70%;
+    margin-top: 25px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    font-family: 'Gluten', cursive;
+    transition: 0.3s ease;
+}
+
+.btn-check:hover {
+    transform: scale(1.05) translateY(-2px);
+    background: linear-gradient(-190deg, #00c6ff, #0072ff);
+    border-radius: 14px;
+}
+
+/* ---------- Results Section ---------- */
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.corrected-box {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.results h2 {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    color: #fff;
+    text-align: center;
+}
+
+.results p {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #fff;
+    text-align: justify;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    padding: 25px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    font-size: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 25px;
+    }
+
+    .results {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,9 @@
+flask
+sumy
+langdetect
+language-tool-python
+PyPDF2
+fpdf
+nltk
+pandas
+openpyxl

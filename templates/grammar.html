@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickFix | Grammar & Spelling Checker</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Gluten:wght@400;600&display=swap">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='grammar.css') }}">
+</head>
+
+<body>
+  <!-- 🔹 NAVBAR -->
+  <nav class="navbar">
+    <div class="logo" onclick="gotoMain()">QuickIntel</div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/summarize">QuickText</a></li>
+      <li><a href="/grammar-check" class="active">QuickFix</a></li>
+      <li><a href="/pdf-summarizer">QuickPDF</a></li>
+      <li><a href="/excel-analyzer">QuickExcel</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🔹 MAIN SECTION -->
+  <div class="container">
+    <h1>QuickFix Grammar Assistant</h1>
+    <p class="subtitle">Detect and correct grammar mistakes instantly with AI-powered precision.</p>
+
+    <form method="POST" action="/grammar-check">
+      <textarea name="text" placeholder="Type or paste your text here...">{{ original if original else '' }}</textarea>
+      <div class="button-container">
+        <button type="submit" class="btn-check">Check Grammar</button>
+      </div>
+    </form>
+
+    {% if corrected %}
+    <div class="results">
+      <div class="corrected-box">
+        <h2>Corrected Text ✅</h2>
+        <p>{{ corrected }}</p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- 🔹 FOOTER -->
+  <footer>
+    <p>© 2025 QuickIntel | Made with ❤️ by Ayush Negi & Team</p>
+  </footer>
+
+
+  <script>
+
+  function gotoMain() {
+    window.location.href = "/";
+  }
+
+  </script>
+</body>
+
+</html>

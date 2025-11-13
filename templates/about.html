@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - QuickIntel</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Gluten:wght@400;600&display=swap">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+
+<body>
+    <!-- 🔹 NAVBAR -->
+    <nav class="navbar">
+        <div class="logo" onclick="gotoMain()">QuickIntel</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about" class="active">About</a></li>
+            <li><a href="/summarize">QuickText</a></li>
+            <li><a href="/grammar-check">QuickFix</a></li>
+            <li><a href="/pdf-summarizer">QuickPDF</a></li>
+            <li><a href="/excel-analyzer">QuickExcel</a></li>
+        </ul>
+    </nav>
+
+    <!-- 🔹 INTRO SECTION -->
+    <section class="hero">
+        <section class="intro">
+            <h1>About QuickIntel</h1>
+            <p>
+                QuickIntel is an AI-powered document intelligence suite designed to simplify how users interact with
+                text,
+                PDFs, and Excel files.
+                We believe in merging the power of Artificial Intelligence with simplicity and accessibility.
+            </p>
+        </section>
+
+        <!-- 🔹 MISSION SECTION -->
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>
+                To make document understanding effortless - empowering users to analyze, summarize, and enhance content
+                in
+                seconds.
+            </p>
+        </section>
+    </section>
+
+    <!-- 🔹 TEAM SECTION -->
+    <section class="team">
+        <h2>Meet the Team</h2>
+        <div class="team-container">
+
+            <!-- Member 1 -->
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='team1.jpg') }}" alt="Team Member 1">
+                <h3>Ayush Negi</h3>
+                <p>Developer</p>
+                <a href="https://linkedin.com/in/ayushnegi912" target="_blank" class="linkedin">LinkedIn Profile</a>
+            </div>
+
+            <!-- Member 2 -->
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='team2.jpg') }}" alt="Team Member 2">
+                <h3>Kartik Dhunna</h3>
+                <p>Manager & Presenter</p>
+                <a href="https://www.linkedin.com/in/kartik-dhunna-93432a203" target="_blank" class="linkedin">LinkedIn Profile</a>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='team3.jpg') }}" alt="Team Member 3">
+                <h3>Mukul</h3>
+                <p>Documentation & Graphics</p>
+                <a href="https://www.linkedin.com/in/mukul-984350356/" target="_blank" class="linkedin">LinkedIn Profile</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 🔹 FOOTER -->
+    <footer>
+        <p>© 2025 QuickIntel | Made with ❤️ by Ayush Negi & Team</p>
+    </footer>
+
+
+    <script>
+
+    function gotoMain() {
+        window.location.href = "/";
+    }
+
+    </script>
+</body>
+
+</html>

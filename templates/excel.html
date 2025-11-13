@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickExcel | Smart Excel / CSV Analyzer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Gluten:wght@400;600&display=swap">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='excel.css') }}">
+</head>
+
+<body>
+  <!-- 🔹 NAVBAR -->
+  <nav class="navbar">
+    <div class="logo" onclick="gotoHome()">QuickIntel</div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/summarize">QuickText</a></li>
+      <li><a href="/grammar-check">QuickFix</a></li>
+      <li><a href="/pdf-summarizer">QuickPDF</a></li>
+      <li><a href="/excel-analyzer" class="active">QuickExcel</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🔹 MAIN SECTION -->
+  <div class="container">
+    <h1>QuickExcel Analyzer</h1>
+    <p class="subtitle">Upload your Excel (.xlsx) or CSV file and let QuickIntel analyze and summarize it instantly.</p>
+
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".xlsx,.csv" required>
+      <div class="button-container">
+        <button type="submit" class="btn-analyze">Analyze File</button>
+      </div>
+    </form>
+
+    {% if message %}
+    <div class="message {% if '✅' in message %}success{% else %}error{% endif %}">
+      {{ message }}
+    </div>
+    {% endif %}
+
+    {% if download_link %}
+    <div class="download-section">
+      <a class="download-btn" href="{{ url_for('download_file', filename=download_link) }}">⬇️ Download Report (PDF)</a>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- 🔹 FOOTER -->
+  <footer>
+    <p>© 2025 QuickIntel | Made with ❤️ by Ayush Negi & Team</p>
+  </footer>
+
+  <script>
+
+    function gotoHome() {
+      window.location.href = "/";
+    }
+
+  </script>
+</body>
+
+</html>

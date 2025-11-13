@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f5f7;
+  color: #333;
+  margin: 0;
+  padding: 40px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #222;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-top: 15px;
+}
+
+textarea {
+  width: 100%;
+  height: 180px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  font-size: 15px;
+}
+
+.or {
+  text-align: center;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="file"], select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.download {
+  background: #198754;
+}
+
+.download:hover {
+  background: #106c3c;
+}
+
+.result {
+  margin-top: 25px;
+  background: #f7f9fb;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.stats {
+  margin-top: 15px;
+  background: #eef3f8;
+  padding: 10px;
+  border-radius: 8px;
+}

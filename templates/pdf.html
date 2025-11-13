@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickPDF | AI PDF Summarizer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Gluten:wght@400;600&display=swap">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='pdf.css') }}">
+
+  <script>
+    function showLoader() {
+      document.getElementById('loading').style.display = 'block';
+    }
+  </script>
+</head>
+
+<body>
+  <!-- 🔹 NAVBAR -->
+  <nav class="navbar">
+    <div class="logo" onclick="gotoMain()">QuickIntel</div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/summarize">QuickText</a></li>
+      <li><a href="/grammar-check">QuickFix</a></li>
+      <li><a href="/pdf-summarizer" class="active">QuickPDF</a></li>
+      <li><a href="/excel-analyzer">QuickExcel</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🔹 MAIN CONTAINER -->
+  <div class="container">
+    <h1>QuickPDF Summarizer</h1>
+    <p class="subtitle">Upload your PDF and let QuickIntel create a clean, concise summary for you.</p>
+
+    <form method="POST" enctype="multipart/form-data" onsubmit="showLoader()">
+      <label>Select a PDF file:</label>
+      <input type="file" name="file" accept=".pdf" required>
+      <div class="button-container">
+        <button type="submit" class="btn-summarize">Summarize PDF</button>
+      </div>
+    </form>
+
+    <p id="loading" class="loading">⏳ Processing your PDF... please wait</p>
+
+    {% if download_link %}
+    <div class="result">
+      <h2>Summary Ready</h2>
+      <p>Your summarized PDF is ready for download.</p>
+      <div class="button-container">
+        <a class="download" href="{{ url_for('download_file', filename=download_link) }}">⬇️ Download Summary (.pdf)</a>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- 🔹 FOOTER -->
+  <footer>
+    <p>© 2025 QuickIntel | Made with ❤️ by Ayush Negi & Team</p>
+  </footer>
+
+
+  <script>
+
+    function gotoMain() {
+      window.location.href = "/";
+    }
+
+  </script>
+</body>
+
+</html>

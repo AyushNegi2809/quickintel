@@ -1,0 +1,212 @@
+/* ---------- Base ---------- */
+body {
+    margin: 0;
+    font-family: 'Gluten', cursive;
+    color: #fff;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 60px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.logo {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 45px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s ease;
+    will-change: transform, color;
+}
+
+.nav-links li a:hover {
+    color: #00e6ff;
+    transform: translateY(-2px);
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+/* ---------- Intro Section ---------- */
+.intro {
+    text-align: center;
+    padding: 60px 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 45%;
+    height: 40vh;
+}
+
+.intro h1 {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.intro p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    letter-spacing: 1px;
+}
+
+/* ---------- Mission Section ---------- */
+.mission {
+    text-align: center;
+    padding: 60px 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 35%;
+    height: 40vh;
+}
+
+
+.mission h2 {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.mission p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    letter-spacing: 1px;
+}
+
+/* ---------- Team Section ---------- */
+.team {
+    text-align: center;
+    padding: 0px 40px 60px 40px;
+}
+
+.team h2 {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.team h3{
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.team-card {
+    width: 270px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.team-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.3rem;
+}
+
+.team-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.linkedin {
+    text-decoration: none;
+    color: #00e6ff;
+    font-weight: 600;
+    border: 1px solid #00e6ff;
+    padding: 6px 14px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.linkedin:hover {
+    background: #00e6ff;
+    color: #fff;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    padding: 25px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    font-size: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

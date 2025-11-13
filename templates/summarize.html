@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickText | QuickIntel Summarizer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Gluten:wght@400;600&display=swap">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='summarize.css') }}">
+</head>
+
+<body>
+  <!-- 🔹 NAVBAR -->
+  <nav class="navbar">
+    <div class="logo" onclick="gotoMain()">QuickIntel</div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/summarize" class="active">QuickText</a></li>
+      <li><a href="/grammar-check">QuickFix</a></li>
+      <li><a href="/pdf-summarizer">QuickPDF</a></li>
+      <li><a href="/excel-analyzer">QuickExcel</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🔹 MAIN CONTAINER -->
+  <div class="container">
+    <h1>QuickText Summarizer</h1>
+    <p class="subtitle">Paste or upload text, and let QuickIntel instantly summarize it for you.</p>
+
+    <form action="/summarize" method="POST" enctype="multipart/form-data">
+      <label>Paste your text:</label>
+      <textarea name="text" placeholder="Paste text here...">{{ original if original else "" }}</textarea>
+
+      <div class="or">—— OR ——</div>
+
+      <label>Upload a .txt file:</label>
+      <input type="file" name="file" accept=".txt">
+
+      <label>Choose Summary Length:</label>
+      <select name="length">
+        <option value="3" {% if length_option=="3" %}selected{% endif %}>Short (3 sentences)</option>
+        <option value="5" {% if length_option=="5" %}selected{% endif %}>Medium (5 sentences)</option>
+        <option value="7" {% if length_option=="7" %}selected{% endif %}>Long (7 sentences)</option>
+      </select>
+
+      <div class="generate-button-container">
+        <button type="submit" class="btn-generate">Generate Summary</button>
+      </div>
+    </form>
+
+    {% if summary %}
+    <div class="result">
+      <h2>Summary</h2>
+      <p class="summary-text">{{ summary }}</p>
+
+      <form action="/download" method="POST">
+        <input type="hidden" name="summary" value="{{ summary }}">
+        <div class="generate-button-container">
+          <button type="submit" class="download">Download Summary (.txt)</button>
+        </div>
+      </form>
+
+      <div class="stats">
+        <p><b>Language:</b> {{ language }}</p>
+        <p><b>Word Count:</b> {{ word_count }}</p>
+        <p><b>Estimated Reading Time:</b> {{ reading_time }} mins</p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- 🔹 FOOTER -->
+  <footer>
+    <p>© 2025 QuickIntel | Made with ❤️ by Ayush Negi & Team</p>
+  </footer>
+
+
+  <script>
+
+  function gotoMain() {
+    window.location.href = "/";
+  }
+
+  </script>
+</body>
+
+</html>

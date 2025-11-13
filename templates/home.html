@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickIntel - Smart Document Analyzer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Gluten:wght@400;600&display=swap">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+
+<body>
+  <!-- 🔹 NAVBAR -->
+  <nav class="navbar">
+    <div class="logo" onclick="gotoMain()">QuickIntel</div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/summarize">QuickText</a></li>
+      <li><a href="/grammar-check">QuickFix</a></li>
+      <li><a href="/pdf-summarizer">QuickPDF</a></li>
+      <li><a href="/excel-analyzer">QuickExcel</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🔹 HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Summarize | Correct | Simplify.</h1>
+      <p>Empower your documents with AI - QuickIntel helps you summarize, analyze, and enhance your text in seconds.</p>
+      <a href="/summarize"><button class="cta-btn">Try QuickText →</button></a>
+    </div>
+    <div class="hero-image">
+    </div>
+  </section>
+
+  <!-- 🔹 FEATURES -->
+  <section class="features">
+    <div class="feature-card">
+      ⚡ <h3>Fast Processing</h3>
+      <p>Get concise and accurate summaries within seconds.</p>
+    </div>
+    <div class="feature-card">
+      🔒 <h3>Secure Uploads</h3>
+      <p>Your files are processed safely and never stored.</p>
+    </div>
+    <div class="feature-card">
+      💾 <h3>Multi-Format</h3>
+      <p>Supports PDF, Text, and Excel formats effortlessly.</p>
+    </div>
+  </section>
+
+  <!-- 🔹 ABOUT SECTION -->
+  <section class="about">
+    <h2>About QuickIntel</h2>
+    <p>
+      QuickIntel is an AI-powered document intelligence suite built to make content smarter and simpler.
+      From summarizing PDFs to checking grammar or analyzing Excel data - all in one seamless interface.
+    </p>
+    <a href="/about"><button class="about-btn">Meet the Team</button></a>
+  </section>
+
+  <!-- 🔹 FOOTER -->
+  <footer>
+    <p>© 2025 QuickIntel | Made with ❤️ by Ayush Negi & team</p>
+  </footer>
+
+
+  <script>
+
+  function gotoMain() {
+    window.location.href = "/";
+  }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+/* ---------- Base ---------- */
+body {
+    margin: 0;
+    font-family: 'Gluten', cursive;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 60px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.logo {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 45px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #00e6ff;
+    transform: translateY(-2px);
+}
+
+/* ---------- Container ---------- */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 140px auto 60px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 60px 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    text-align: center;
+    flex: 1;
+}
+
+/* ---------- Titles ---------- */
+h1 {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    color: #fff;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    letter-spacing: 0.8px;
+    font-size: 1.1rem;
+    color: #cfd8dc;
+    margin-bottom: 25px;
+}
+
+/* ---------- Form ---------- */
+form {
+    margin-top: 20px;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    font-family: 'Gluten', cursive;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* ---------- Button ---------- */
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-analyze {
+    width: 70%;
+    margin-top: 25px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    font-family: 'Gluten', cursive;
+    transition: 0.3s ease;
+}
+
+.btn-analyze:hover {
+    transform: scale(1.05) translateY(-2px);
+    background: linear-gradient(-190deg, #00c6ff, #0072ff);
+    border-radius: 14px;
+}
+
+/* ---------- Message ---------- */
+.message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.success {
+    background-color: rgba(0, 255, 100, 0.15);
+    color: #00ff88;
+    border: 1px solid #00ff88;
+}
+
+.error {
+    background-color: rgba(255, 50, 50, 0.15);
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b;
+}
+
+/* ---------- Download Button ---------- */
+.download-section {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.download-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    transform: scale(1.05) translateY(-2px);
+    background: linear-gradient(-190deg, #00c6ff, #0072ff);
+    border-radius: 14px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    padding: 25px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    font-size: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    margin-top: auto;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .container {
+        padding: 35px 25px;
+    }
+
+    input[type="file"]::-webkit-file-upload-button {
+        padding: 8px 12px;
+    }
+}

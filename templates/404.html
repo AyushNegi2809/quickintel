@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* Use Flask static URL for assets. Place your image in static/404bg.png */
+      background: url("{{ url_for('static', filename='404bg.png') }}");
+      background-position: center center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      gap: 18px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 58px;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 32px;
+      color: #c9d1d9;
+      line-height: 1.4;
+    }
+
+    a {
+      color: #a8ffdb;
+      text-decoration: none;
+      font-size: 20px;
+      border: 3px solid #a8ffdb;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 0px;
+      margin-top: 15px;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    a:hover {
+        background: #b3b3b321;
+        backdrop-filter: blur(5px);
+        border-radius: 12px;
+        transform: translateY(-3px) translateZ(-5px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Oops! Page Not Found 😅</h2>
+    <p>The page you’re looking for doesn’t exist or may have been moved.</p>
+    <a href="/">🏠 Go Back Home</a>
+  </div>
+</body>
+
+</html>
